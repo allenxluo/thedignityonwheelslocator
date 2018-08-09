@@ -1,5 +1,7 @@
 package dignityonwheels.org.locator;
 
+import android.util.Log;
+
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -22,6 +24,7 @@ import java.util.List;
 public class Location {
     private int day;
     private String[] message;
+    private static final String TAG = "MyActivity";
 
     private static String cleanDateTime(DateTime dateTime) {
         Date date = new Date(dateTime.getValue());
@@ -78,13 +81,13 @@ public class Location {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     public int getDay() {
         return day;
     }
 
-    public String[] getMessage() {
-        return message;
+    public String[] getMessage() { return message;
     }
 }

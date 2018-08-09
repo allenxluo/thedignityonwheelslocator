@@ -6,4 +6,8 @@
     <color name="splashBackground">#424242</color>
     <color name="colorWhite">#fff</color>
     <color name="colorGrey">#9E9E9E</color>
+    <color name="fakeColorPrimary">#262938</color>
+    <color name="fakeColorPrimaryDark">#181A24</color>
+    <color name = "fakeColorAccent">#FF4081</color>
+    <color name="colorTransparentWhite">#cccccc</color>
 </resources>

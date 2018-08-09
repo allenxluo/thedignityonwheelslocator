@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_about:
                             selectedFragment = new AboutFragment();
                             break;
-                        case R.id.btnlocation:
-                            selectedFragment = new ScheduleFragment();
-                            break;
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

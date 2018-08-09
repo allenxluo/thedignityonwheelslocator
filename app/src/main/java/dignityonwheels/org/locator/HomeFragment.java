@@ -38,10 +38,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         }
     }
 
+
     public void replaceFragment(Fragment someFragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, someFragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
 }
+

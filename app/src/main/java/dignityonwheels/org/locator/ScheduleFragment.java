@@ -26,6 +26,9 @@ public class ScheduleFragment extends Fragment {
 
     public static AssetManager assets;
     public static TextView text;
+    public static TextView texttwo;
+    public static TextView textthree;
+    public static TextView textfour;
     private HorizontalCalendar horizontalCalendar;
     private static final String TAG = "MyActivity";
 
@@ -38,6 +41,7 @@ public class ScheduleFragment extends Fragment {
         View scheduleFragmentView = inflater.inflate(R.layout.fragment_schedule, container, false);
 
         text = scheduleFragmentView.findViewById(R.id.textLocation);
+
 
         new GetLocationTask().execute(0);
 
