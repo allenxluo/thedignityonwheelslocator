@@ -10,7 +10,7 @@ public class GetLocationTask extends AsyncTask<Integer, Void, Location> {
     protected void onPostExecute(Location result) {
         StringBuffer msg = new StringBuffer();
         for(String s: result.getMessage()) {
-            msg.append(s + "\n" + "------------------------------------------------------------------------" + "\n");
+            msg.append(s + "\n\n");
         }
         ScheduleFragment.text.setText(msg);
     }

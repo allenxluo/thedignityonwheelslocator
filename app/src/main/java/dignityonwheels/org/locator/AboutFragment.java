@@ -1,5 +1,6 @@
 package dignityonwheels.org.locator;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.content.res.AssetManager;
+import android.widget.Toolbar;
 
 public class AboutFragment extends Fragment {
 
@@ -17,6 +19,9 @@ public class AboutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View aboutFragmentView = inflater.inflate(R.layout.fragment_about, container, false);
+
+
+
 
         return aboutFragmentView;
     }
