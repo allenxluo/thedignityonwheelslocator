@@ -1,5 +1,6 @@
 package dignityonwheels.org.locator;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,15 +8,17 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     public static AssetManager assets;
+    public static LayoutInflater inflater;
 
-    private static HomeFragment home;
-    private static ScheduleFragment schedule;
-    private static AboutFragment about;
+    public static HomeFragment home;
+    public static ScheduleFragment schedule;
+    public static AboutFragment about;
 
     private Toolbar topBar;
     private BottomNavigationView navBar;
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         assets = getAssets();
+
+        inflater = getLayoutInflater();
 
         home = new HomeFragment();
         home.setButtonOnClickListener(new View.OnClickListener() {

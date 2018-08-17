@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textIsSelectable="true"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="94dp"
+    android:layout_marginTop="120dp"
+    android:background="@drawable/rounded_button_location"
+    android:layout_marginLeft="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="-20dp"
+    android:paddingTop="10dp"
+    android:text=""
+    android:textColor="@color/fakeColorPrimaryDark"
+    android:textSize="15sp"
+    app:fontFamily="@style/TextAppearance.AppCompat.Button" />
