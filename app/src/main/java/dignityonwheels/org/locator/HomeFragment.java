@@ -10,41 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
-
-    public HomeFragment(){
-
-    }
+public class HomeFragment extends Fragment {
+    private Button toSchedule;
+    private View.OnClickListener listener;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View homeFragmentView =  inflater.inflate(R.layout.fragment_home, container, false);
+        View homeView =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button newFragButton = (Button) homeFragmentView.findViewById(R.id.btnlocation);
+        toSchedule = (Button) homeView.findViewById(R.id.schedule_btn);
+        toSchedule.setOnClickListener(listener);
 
-        newFragButton.setOnClickListener(this);
-
-        return homeFragmentView;
+        return homeView;
     }
 
-    public void onClick(View view){
-        Fragment fragment = null;
-        switch (view.getId()){
-            case R.id.btnlocation:
-                fragment = new ScheduleFragment();
-                replaceFragment(fragment);
-                break;
-        }
+    public void setButtonOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
     }
-
-
-    public void replaceFragment(Fragment someFragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
 }
 
