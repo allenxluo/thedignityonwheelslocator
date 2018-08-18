@@ -53,6 +53,7 @@ public class ScheduleFragment extends Fragment {
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
             public void onDateSelected(Calendar date, int position) {
+                scheduleLayout.removeAllViews();
                 new GetLocationTask().execute(position - 33);
             }
         });

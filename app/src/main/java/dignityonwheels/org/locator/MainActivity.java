@@ -1,6 +1,5 @@
 package dignityonwheels.org.locator;
 
-import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -79,6 +78,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navBar.setSelectedItemId(R.id.nav_home);
-
     }
 }
