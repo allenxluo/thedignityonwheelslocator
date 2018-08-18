@@ -24,7 +24,6 @@ import java.util.List;
 public class Location {
     private int day;
     private String[] message;
-    private static final String TAG = "MyActivity";
 
     private static String cleanDateTime(DateTime dateTime) {
         Date date = new Date(dateTime.getValue());
@@ -43,7 +42,7 @@ public class Location {
             HttpTransport httpTransport = AndroidHttp.newCompatibleTransport();
             JsonFactory jsonFactory = AndroidJsonFactory.getDefaultInstance();
 
-            GoogleCredential credential = GoogleCredential.fromStream(ScheduleFragment.assets.open("dignity-on-wheels-locator-6e03f52e8423.json"))
+            GoogleCredential credential = GoogleCredential.fromStream(MainActivity.assets.open("dignity-on-wheels-locator-6e03f52e8423.json"))
                     .createScoped(Collections.singleton(CalendarScopes.CALENDAR_READONLY));
 
             service = new Calendar.Builder(httpTransport, jsonFactory, credential).build();
