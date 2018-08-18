@@ -1,6 +1,7 @@
 package dignityonwheels.org.locator;
 
 import android.os.AsyncTask;
+import android.widget.TextView;
 
 public class GetLocationTask extends AsyncTask<Integer, Void, Location> {
     protected Location doInBackground(Integer ... args) {
@@ -8,10 +9,12 @@ public class GetLocationTask extends AsyncTask<Integer, Void, Location> {
     }
 
     protected void onPostExecute(Location result) {
-        StringBuffer msg = new StringBuffer();
-        for(String s: result.getMessage()) {
-            msg.append(s + "\n\n");
+        TextView text;
+
+        for(int i = 0; i < result.getMessage().length; i++) {
+            text = (TextView) MainActivity.inflater.inflate(R.layout.fragment_text, MainActivity.schedule.getScheduleLayout(), false);
+            text.setText(result.getMessage()[i]);
+            MainActivity.schedule.getScheduleLayout().addView(text);
         }
-        ScheduleFragment.text.setText(msg);
     }
 }

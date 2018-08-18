@@ -13,16 +13,10 @@ import android.content.res.AssetManager;
 import android.widget.Toolbar;
 
 public class AboutFragment extends Fragment {
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View aboutFragmentView = inflater.inflate(R.layout.fragment_about, container, false);
-
-
-
-
-        return aboutFragmentView;
+        View aboutView = inflater.inflate(R.layout.fragment_about, container, false);
+        return aboutView;
     }
 }
