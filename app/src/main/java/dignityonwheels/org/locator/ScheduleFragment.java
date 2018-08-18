@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.util.Calendar;
 
@@ -16,15 +18,15 @@ import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 public class ScheduleFragment extends Fragment {
-    public static TextView text;
     private HorizontalCalendar horizontalCalendar;
+    private LinearLayout scheduleLayout;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View scheduleView = inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        text = scheduleView.findViewById(R.id.textLocation);
+        scheduleLayout = (LinearLayout) scheduleView.findViewById(R.id.schedule_layout);
 
         new GetLocationTask().execute(0);
 
@@ -51,11 +53,15 @@ public class ScheduleFragment extends Fragment {
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
             public void onDateSelected(Calendar date, int position) {
+                scheduleLayout.removeAllViews();
                 new GetLocationTask().execute(position - 33);
             }
         });
 
         return scheduleView;
+    }
 
+    public ViewGroup getScheduleLayout() {
+        return scheduleLayout;
     }
 }
